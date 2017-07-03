@@ -3,11 +3,11 @@ machine:
     version: 7.1.0
   environment:
     DB_CONNECTION: circle_test
-    APP_ENV: local
+    APP_ENV: testing
   services:
     - mysql
 
 database:
   override:
-    - "php artisan migrate"
-    - "php artisan db:seed"
+    - "php artisan migrate --env=testing"
+    - "php artisan db:seed --env=testing"
